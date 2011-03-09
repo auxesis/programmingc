@@ -1,3 +1,6 @@
 example*
 !example*.c
+exercise*
+!exercise*.c
 *.swp
+
