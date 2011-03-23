@@ -7,12 +7,12 @@ int denominator() {
 }
 
 int main (void) {
-
-  float pi       = 4.0;
-  int   operator = 1;
+  float pi        = 4.0;
+  int   operator  = 1;
   int   result;
   int   iteration = 0;
   float term;
+
   while (result != 314159) {
     iteration++;
     operator *= -1;
@@ -20,7 +20,8 @@ int main (void) {
     pi        = pi + term;
     printf("%d: %.10f\n", iteration, pi);
 
-    result = pi * 100000; 
+    result = pi * 100000;
   }
+
   return 0;
 }
