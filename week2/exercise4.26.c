@@ -23,5 +23,7 @@ int main (void) {
     result = pi * 100000;
   }
 
+  printf("%d\n", iteration + 1);
+
   return 0;
 }
