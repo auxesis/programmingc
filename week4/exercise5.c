@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define STRING_SIZE 100
 
-void reverse_print(char string[], int count);
+void reverse_print(char string[]);
 void read_and_reverse_lines(void);
 
 int main() {
@@ -12,9 +13,14 @@ int main() {
   return 0;
 }
 
-void reverse_print(char string[], int count) {
-  if (count != 0) { 
-    for (count = count - 1; count >= 0; count--) {
+void reverse_print(char string[]) {
+  int length = strlen(string);
+  int count;
+
+  printf("%d", length);
+
+  if (length > 0) { 
+    for (count = length; count >= 0; count--) {
       printf("%c", string[count]);
     }
     printf("\n");
@@ -30,7 +36,7 @@ void read_and_reverse_lines() {
 
   while ((c = getchar()) != EOF) {
     if (c == '\n') {
-      reverse_print(string, count);
+      reverse_print(string);
       count = 0;
       continue;
     } else {
