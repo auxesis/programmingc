@@ -4,10 +4,13 @@
 #define STRING_SIZE 100
 
 void reverse_print(char string[], int count) {
-  for (count = count - 1; count >= 0; count--) {
-    printf("%c", string[count]);
+  if (count != 0) { 
+    for (count = count - 1; count >= 0; count--) {
+      printf("%c", string[count]);
+    }
+    printf("\n");
   }
-  printf("\n");
+
   return; 
 }
 
