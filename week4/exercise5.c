@@ -3,6 +3,15 @@
 
 #define STRING_SIZE 100
 
+void reverse_print(char string[], int count);
+void read_and_reverse_lines(void);
+
+int main() {
+  read_and_reverse_lines();
+
+  return 0;
+}
+
 void reverse_print(char string[], int count) {
   if (count != 0) { 
     for (count = count - 1; count >= 0; count--) {
@@ -14,7 +23,7 @@ void reverse_print(char string[], int count) {
   return; 
 }
 
-int main() {
+void read_and_reverse_lines() {
   char string[STRING_SIZE];
   int count = 0;
   char c; 
@@ -35,6 +44,5 @@ int main() {
 
     count += 1;
   }
-
-  return 0;
 }
+
