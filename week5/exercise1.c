@@ -8,21 +8,17 @@ int main() {
   char c;
 
   printf("Please enter a string: \n");
-  fgets(pstring, STRING_SIZE, stdin);
-
-  printf("%d\n", sizeof(pstring));
-  printf("%d\n", sizeof(string));
-
-  while (c = *pstring++) {
-    printf("%c", c);
+  while (*pstring++) {
+    c = getchar();
+    if (c == '\n') {
+      break;
+    } else {
+      *pstring = c;
+    }
   }
 
-  *pstring--;
-  *pstring--;
   while (c = *pstring--) {
-    if (c != '\n') {
-      printf("%c", c);
-    }
+    printf("%c", c);
   }
 
   printf("\n");
