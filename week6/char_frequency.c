@@ -1,29 +1,21 @@
 #include <string.h>
 #include <stdio.h>
 #include <ctype.h>
-#define MAX_PARAGRAPH_SIZE 16384
-#define CHARACTER_SIZE 1024
+#define CHARACTER_SIZE 128
 
 int main() {
-  char paragraph[MAX_PARAGRAPH_SIZE];
-  char *pparagraph = paragraph;
-  int  c, i, j;
-  int  characters[CHARACTER_SIZE];
+  int c, j, lower;
+  int i = 0;
+  int characters[CHARACTER_SIZE] = {0};
 
-  fgets(paragraph, MAX_PARAGRAPH_SIZE, stdin);
-
-  while (*pparagraph++) {
-    c = tolower(*pparagraph);
-    ++characters[c];
+  while ((c = getc(stdin)) != EOF) {
+    lower = tolower(c);
+    ++characters[lower];
   }
 
   for (i=0; i < CHARACTER_SIZE; i++) {
     if (characters[i] > 0 && isalpha(i)) {
-      printf("%c | ", i);
-      for (j=0; j < characters[i]; j++) {
-        printf("%c", i);
-      }
-      printf("\n");
+      printf("| %c | %10d |\n", i, characters[i]);
     }
   }
 }
